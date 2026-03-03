@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Layout/Footer/Footer";
 import Navbar from "./components/Layout/Navbar/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -14,6 +15,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </>
   );
 }
