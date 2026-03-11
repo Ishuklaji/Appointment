@@ -3,6 +3,7 @@ import Footer from "./components/Layout/Footer/Footer";
 import Navbar from "./components/Layout/Navbar/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import GalleryPage from "./pages/Gallery/GalleryPage";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
       <Footer />
     </>
