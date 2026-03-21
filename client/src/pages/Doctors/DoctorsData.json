@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "speciality": "Dentist",
+    "pic": "https://static.thenounproject.com/png/1743561-200.png",
+    "degree": "MD in Dental",
+    "about": "lorem50",
+    "experience": 1,
+    "available": true,
+    "fee": 100,
+    "icon": "fa-solid fa-teeth"
+  },
+  {
+    "id": 2,
+    "name": "Johny Doe",
+    "speciality": "Dentist",
+    "pic": "https://static.thenounproject.com/png/1743561-200.png",
+    "degree": "MD in Dental",
+    "about": "lorem50",
+    "experience": 1,
+    "available": true,
+    "fee": 100,
+    "icon": "fa-solid fa-teeth"
+  },
+  {
+    "id": 3,
+    "name": "Johnathen Doe",
+    "speciality": "Dentist",
+    "pic": "https://static.thenounproject.com/png/1743561-200.png",
+    "degree": "MD in Dental",
+    "about": "lorem50",
+    "experience": 1,
+    "available": true,
+    "fee": 100,
+    "icon": "fa-solid fa-teeth"
+  },
+  {
+    "id": 4,
+    "name": "John Doe",
+    "speciality": "Dentist",
+    "pic": "https://static.thenounproject.com/png/1743561-200.png",
+    "degree": "MD in Dental",
+    "about": "lorem50",
+    "experience": 1,
+    "available": true,
+    "fee": 100,
+    "icon": "fa-solid fa-teeth"
+  },
+  {
+    "id": 5,
+    "name": "Johny Doe",
+    "speciality": "Dentist",
+    "pic": "https://static.thenounproject.com/png/1743561-200.png",
+    "degree": "MD in Dental",
+    "about": "lorem50",
+    "experience": 1,
+    "available": true,
+    "fee": 100,
+    "icon": "fa-solid fa-teeth"
+  },
+  {
+    "id": 6,
+    "name": "Johnathen Doe",
+    "speciality": "Dentist",
+    "pic": "https://static.thenounproject.com/png/1743561-200.png",
+    "degree": "MD in Dental",
+    "about": "lorem50",
+    "experience": 1,
+    "available": true,
+    "fee": 100,
+    "icon": "fa-solid fa-teeth"
+  }
+]
