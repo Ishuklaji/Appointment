@@ -43,7 +43,7 @@
     "degree": "MD in Dental",
     "about": "lorem50",
     "experience": 1,
-    "available": true,
+    "available": false,
     "fee": 100,
     "icon": "fa-solid fa-teeth"
   },
@@ -67,7 +67,7 @@
     "degree": "MD in Dental",
     "about": "lorem50",
     "experience": 1,
-    "available": true,
+    "available": false,
     "fee": 100,
     "icon": "fa-solid fa-teeth"
   }
