@@ -11,7 +11,7 @@ import userRoutes from "./routes/userRoutes.js";
 // config env variable
 dotenv.config();
 
-// database function
+// database
 connectDB();
 
 // rest object
