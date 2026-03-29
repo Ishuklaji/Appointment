@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 // port
 const PORT = process.env.PORT || 5000;
 
-// run server here
+// run server command here
 app.listen(PORT, () => {
   console.log(
     `Server Running in ${process.env.NODE_ENV} mode on http://localhost:${PORT}`
