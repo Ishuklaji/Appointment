@@ -45,3 +45,31 @@ export const getAllMessage = async (req, res) => {
     });
   }
 };
+
+// delete message
+export const deleteMessage = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      res.status(404).send({
+        success: false,
+        message: "Please provide message ID",
+      });
+    }
+    // find message
+
+    const webMessage = await webmessageModel.findByIdAndDelete(id);
+
+    res.status(201).send({
+      success: true,
+      message: "Message has been deleted",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in delete Web Message API",
+      error,
+    });
+  }
+};
