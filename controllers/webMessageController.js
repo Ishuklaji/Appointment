@@ -56,7 +56,7 @@ export const deleteMessage = async (req, res) => {
         message: "Please provide message ID",
       });
     }
-    // find message and delete
+    // find message and delete it
 
     const webMessage = await webmessageModel.findByIdAndDelete(id);
 
