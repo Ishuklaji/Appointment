@@ -169,7 +169,7 @@ export const updatePassword = async (req, res) => {
       });
     }
 
-    // check old password
+    // check old password here
 
     const isMatch = await bcrypt.compare(oldPassword, user?.password);
     if (!isMatch) {
