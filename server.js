@@ -7,6 +7,7 @@ import morgan from "morgan";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
+import doctorRoutes from "./routes/doctorRoutes.js";
 import webMessageRoutes from "./routes/webMessageRoutes.js";
 
 // config env variable
@@ -26,6 +27,7 @@ app.use(morgan("dev"));
 // routes
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/doctor", doctorRoutes);
 app.use("/api/v1/webmessage", webMessageRoutes);
 
 app.get("/", (req, res) => {
