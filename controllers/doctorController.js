@@ -69,7 +69,7 @@ export const addDoctor = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Error in adding a doctor API",
+      message: "Error in adding doctor API",
       error,
     });
   }
