@@ -181,7 +181,7 @@ export const deleteDoctor = async (req, res) => {
     if (!id) {
       return res.status(404).send({
         success: false,
-        message: "Please provide doctor ID",
+        message: "Please provide doctor's ID",
       });
     }
 
