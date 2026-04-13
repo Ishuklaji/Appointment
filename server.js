@@ -9,6 +9,7 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import doctorRoutes from "./routes/doctorRoutes.js";
 import webMessageRoutes from "./routes/webMessageRoutes.js";
+import appointmentRoutes from "./routes/appointmentRoutes.js";
 
 // config env variable
 dotenv.config();
@@ -29,6 +30,7 @@ app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/doctor", doctorRoutes);
 app.use("/api/v1/webmessage", webMessageRoutes);
+app.use("/api/v1/appointment", appointmentRoutes);
 
 app.get("/", (req, res) => {
   res.send(`<h1>Node server running </h1>`);

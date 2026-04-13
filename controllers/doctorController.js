@@ -207,3 +207,43 @@ export const deleteDoctor = async (req, res) => {
     });
   }
 };
+
+// update availability of doctor
+export const updateAvailableStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { availableStatus } = req.body;
+
+    if (!id) {
+      return res.status(404).send({
+        success: false,
+        message: "Please provide doctor ID",
+      });
+    }
+    if (!availableStatus) {
+      return res.status(400).send({
+        success: false,
+        message: "Please provide availability status",
+      });
+    }
+
+    const updatedDoctor = await doctorModel.findByIdAndUpdate(
+      id,
+      { $set: { available: availableStatus } },
+      { returnDocument: "after" },
+    );
+
+    res.status(200).send({
+      success: true,
+      message: "Doctor availability updated successfully",
+      doctor: updatedDoctor,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in updating doctor availability API",
+      error,
+    });
+  }
+};

@@ -5,6 +5,7 @@ import {
   deleteDoctor,
   getAllDoctors,
   getDoctorDetails,
+  updateAvailableStatus,
   updateDoctor,
 } from "../controllers/doctorController.js";
 import upload from "../middlewares/multer.js";
@@ -31,5 +32,8 @@ router.patch(
 
 // DELETE DOCTOR || DELETE
 router.delete("/delete/:id", userAuth, isAdmin, deleteDoctor);
+
+// UPDATE DOCTOR AVAILABILITY || PATCH
+router.patch("/update-status/:id", userAuth, isAdmin, updateAvailableStatus);
 
 export default router;
