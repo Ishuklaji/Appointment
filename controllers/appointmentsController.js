@@ -136,7 +136,7 @@ export const updateAppointmentStatus = async (req, res) => {
   }
 };
 
-// get user's appointments
+// get user appointments
 export const getUserAppointments = async (req, res) => {
   try {
     const { userId } = req.params;
