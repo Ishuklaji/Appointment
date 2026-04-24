@@ -130,7 +130,7 @@ export const updateAppointmentStatus = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Error in changing appointment status API",
+      message: "Error in changing appointment status from API",
       error,
     });
   }
