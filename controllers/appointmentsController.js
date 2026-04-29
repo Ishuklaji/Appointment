@@ -112,7 +112,7 @@ export const updateAppointmentStatus = async (req, res) => {
     if (!appointmentStatus) {
       return res
         .status(400)
-        .send({ status: false, message: "Appointment status is required" });
+        .send({ status: false, message: "Appointment's status is required" });
     }
 
     const appointment = await appointmentModel.findByIdAndUpdate(
