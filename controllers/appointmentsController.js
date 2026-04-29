@@ -167,3 +167,48 @@ export const getUserAppointments = async (req, res) => {
     });
   }
 };
+
+// get user appointment details
+export const getUserAppointmentDetails = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res
+        .status(404)
+        .send({ status: false, message: "Appointment ID is required" });
+    }
+
+    const appointment = await appointmentModel.findById(id);
+    if (!appointment) {
+      return res
+        .status(404)
+        .send({ status: false, message: "Appointment not found" });
+    }
+    // find user and doctor details
+    const user = await userModel.findById(appointment?.userId);
+    const doctor = await doctorModel.findById(appointment?.doctorId);
+
+    res.status(200).json({
+      status: true,
+      message: "Appointment details fetched successfully",
+      appointmentDetails: {
+        doctorName: doctor?.name,
+        doctorPhone: doctor?.phone,
+        doctorEmail: doctor?.email,
+        bookingDate: appointment?.slotDate,
+        bookingTime: appointment?.slotTime,
+        amount: appointment?.amount,
+        bookingStatus: appointment?.status,
+        paymentStatus: appointment?.payment,
+        createdAt: appointment?.createdAt,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in fetching appointment details from API",
+      error,
+    });
+  }
+};

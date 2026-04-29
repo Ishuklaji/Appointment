@@ -4,6 +4,7 @@ import {
   bookAppointment,
   getAllAppointments,
   getAppointmentDetails,
+  getUserAppointmentDetails,
   getUserAppointments,
   updateAppointmentStatus,
 } from "../controllers/appointmentsController.js";
@@ -24,5 +25,12 @@ router.patch("/update-status/:id", userAuth, isAdmin, updateAppointmentStatus);
 
 // GET APPOINTMENTS BY USER ID || GET
 router.get("/get-user-appointments/:userId", userAuth, getUserAppointments);
+
+// GET USER APPOINTMENT DETAILS || GET
+router.get(
+  "/get-user-appointment-details/:id",
+  userAuth,
+  getUserAppointmentDetails,
+);
 
 export default router;
