@@ -207,7 +207,7 @@ export const getUserAppointmentDetails = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Error in fetching userappointment details from API",
+      message: "Error in fetching user appointment details from API",
       error,
     });
   }
