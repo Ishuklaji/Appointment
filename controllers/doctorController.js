@@ -242,7 +242,7 @@ export const updateAvailableStatus = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Error in updating doctor availability API",
+      message: "Error in updating doctor's availability API",
       error,
     });
   }
