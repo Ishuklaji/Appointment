@@ -235,7 +235,7 @@ export const updateAvailableStatus = async (req, res) => {
 
     res.status(200).send({
       success: true,
-      message: "Doctor availability updated successfully",
+      message: "Doctor's availability updated successfully",
       doctor: updatedDoctor,
     });
   } catch (error) {
