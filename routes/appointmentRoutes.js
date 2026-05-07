@@ -2,6 +2,7 @@ import express from "express";
 import { isAdmin, userAuth } from "../middlewares/AuthMiddleware.js";
 import {
   bookAppointment,
+  cancelAppointment,
   getAllAppointments,
   getAppointmentDetails,
   getUserAppointmentDetails,
@@ -32,5 +33,8 @@ router.get(
   userAuth,
   getUserAppointmentDetails,
 );
+
+// CANCEL APPOINTMENT || POST
+router.post("/cancel/:id", userAuth, cancelAppointment);
 
 export default router;

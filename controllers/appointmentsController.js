@@ -178,14 +178,19 @@ export const getUserAppointmentDetails = async (req, res) => {
         .send({ status: false, message: "Appointment ID is required" });
     }
 
-    const appointment = await appointmentModel.findById(id);
+    // find user and doctor details
+    const user = await userModel.findById(id);
+
+    if (!user) {
+      return res.status(404).send({ status: false, message: "User not found" });
+    }
+
+    const appointment = await appointmentModel.findOne({ userId: user?._id });
     if (!appointment) {
       return res
         .status(404)
         .send({ status: false, message: "Appointment not found" });
     }
-    // find user and doctor details
-    const user = await userModel.findById(appointment?.userId);
     const doctor = await doctorModel.findById(appointment?.doctorId);
 
     res.status(200).json({
@@ -208,6 +213,42 @@ export const getUserAppointmentDetails = async (req, res) => {
     res.status(500).send({
       success: false,
       message: "Error in fetching user's appointment details from API",
+      error,
+    });
+  }
+};
+
+// cancel user's appointment
+export const cancelAppointment = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res
+        .status(404)
+        .send({ status: false, message: "Appointment ID is required" });
+    }
+
+    const appointment = await appointmentModel.findById(id);
+    if (!appointment) {
+      return res
+        .status(404)
+        .send({ status: false, message: "Appointment not found" });
+    }
+
+    await appointment.updateOne({ $set: { status: "cancelled" } });
+
+    res.status(200).json({
+      status: true,
+      message: "User's appointment cancelled successfully",
+      appointment,
+    });
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in cancelling user's appointment from API",
       error,
     });
   }
