@@ -6,7 +6,7 @@ const Contact = () => {
     <>
       <div className="d-flex mt-5 justify-content-center">
         <h6>
-          <i className="fa-solid fa-phone-volume ms-3"></i> Emergency Contact :
+          <i className="fa-solid fa-phone-volume ms-3"></i> Emergency Contact Number:
           91234567890
         </h6>
         <h6>
