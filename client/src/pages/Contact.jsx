@@ -10,7 +10,7 @@ const Contact = () => {
           91234567890
         </h6>
         <h6>
-          <i className="fa-solid fa-clock ms-3"></i> 10:00am TO 10:00pm
+          <i className="fa-solid fa-clock ms-3"></i> 10:00am TO 11:00pm
         </h6>
         <h6>
           <i className="fa-solid fa-envelope ms-3"></i> help@desk.com
